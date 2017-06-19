@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpModule } from "@angular/http";
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -9,7 +10,7 @@ import { OrganisationsPage } from '../pages/organisations/organisations'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { GithubUsersProvider } from '../providers/github-users/github-users';
+import { GithubUsers } from '../providers/github-users/github-users';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { GithubUsersProvider } from '../providers/github-users/github-users';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp), 
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,6 +32,6 @@ import { GithubUsersProvider } from '../providers/github-users/github-users';
     OrganisationsPage
   ],
   providers: [StatusBar,
-    GithubUsersProvider]
+    GithubUsers,]
 })
 export class AppModule {}

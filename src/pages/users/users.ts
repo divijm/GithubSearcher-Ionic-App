@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { User } from '../../models/user';
 
-import { GithubUsersProvider } from '../../providers/github-users/github-users';
+import { GithubUsers } from '../../providers/github-users/github-users';
 
 @Component({
   selector: 'page-users',
@@ -11,18 +11,18 @@ import { GithubUsersProvider } from '../../providers/github-users/github-users';
 })
 export class UsersPage {
   users: User[]
+
   constructor(
     public navCtrl: NavController, 
-    private githubUsers: GithubUsersProvider
+    private githubUsers: GithubUsers
     ) {
       githubUsers.load().subscribe(users => {
       console.log(users)
+      this.users = users;
     }) 
   } 
+
+  ionViewDidLoad() {
+    console.log('Hello Users Page');
+  }
 }
-
-
-//   ionViewDidLoad() {
-//     console.log('Hello Users Page');
-//   }
-// }
