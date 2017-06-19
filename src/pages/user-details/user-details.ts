@@ -37,4 +37,3 @@ export class UserDetailsPage {
   }
 
 }
-dfbg                      
