@@ -11,13 +11,15 @@ import { OrganisationsPage } from '../pages/organisations/organisations'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GithubUsers } from '../providers/github-users/github-users';
+import { UserDetailsPage } from '../pages/user-details/user-details';
 
 @NgModule({
   declarations: [
     MyApp,
     UsersPage,
     ReposPage,
-    OrganisationsPage
+    OrganisationsPage,
+    UserDetailsPage 
   ],
   imports: [
     BrowserModule,
@@ -29,9 +31,12 @@ import { GithubUsers } from '../providers/github-users/github-users';
     MyApp,
     UsersPage,
     ReposPage,
-    OrganisationsPage
+    OrganisationsPage,
+    UserDetailsPage
   ],
-  providers: [StatusBar,
-    GithubUsers,]
+  providers: [
+    StatusBar,
+    GithubUsers,
+  ]
 })
 export class AppModule {}
